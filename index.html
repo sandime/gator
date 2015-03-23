@@ -5,8 +5,10 @@
     <script src="js/main.js"></script>
 
 </head>
-<div ng-controller="myController">
-    {{person.name}}
+<div ng-controller="PlayerController">
+    <button ng-click="play()" class="button"  ng-show="!playing">Play</button>
+    <button ng-click="stop()" class="button alert"  ng-show="playing">Stop</button>
+    Playing audio: <b>{{playing}}</b>
 </div>
 <body>
 </body>
