@@ -1,15 +1,46 @@
-<!DOCTYPE html>
+<!-- http://www.ng-newsletter.com/posts/beginner2expert-how_to_start.html tutorial -->
+<!doctype html>
 <html ng-app="myApp">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    <script src="js/main.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
-<div ng-controller="PlayerController">
-    <button ng-click="play()" class="button"  ng-show="!playing">Play</button>
-    <button ng-click="stop()" class="button alert"  ng-show="playing">Stop</button>
-    Playing audio: <b>{{playing}}</b>
+<body ng-controller="PlayerController">
+
+<div class="row">
+    <h1>NPR player</h1>
 </div>
-<body>
+
+<div class="row">
+
+    <div class="large-8 small-8 columns">
+        <div class="container">
+            <div player-view class="large-12 columns small-12" ng-model="player"></div>
+        </div>
+
+        <ul id="programs_list" class="">
+            <li ng-repeat="program in programs">
+                <npr-link ng-model="program" player="player"></npr-link>
+            </li>
+        </ul>
+    </div>
+
+    <div class="large-4 small-4 columns" ng-controller="RelatedController">
+        <h2>Related content</h2>
+        <ul id="related">
+            <li ng-repeat="s in related"><a href="{{ s.link }}">{{ s.caption }}</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    document.write('<script src=/code/js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+</script>
+
+<script src=“https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
