@@ -1,8 +1,8 @@
 // An Angular module is a collection of functions that run when the app is booted.
 
 // app.controller('PlayerController', function($scope, $http, audio) {
-var app = angular.module('myApp', []),
-    apiKey = 'MDAxMjk1ODg3MDEyOTc4NzE3NDE2MmE5Yg001',
+var app = angular.module('myApp', []);
+    apiKey = 'MDAxMjk1ODg3MDEyOTc4NzE3NDE2MmE5Yg001';
     nprUrl = 'http://api.npr.org/query?id=61&fields=relatedLink,title,byline,text,audio,image,pullQuote,all&output=JSON';
 
 app.factory('player', ['audio', '$rootScope', function(audio, $rootScope) {
