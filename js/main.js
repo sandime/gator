@@ -89,7 +89,7 @@ app.directive('nprLink', function() {
   }
 });
 
-app.directive('playerView', [function(){
+app.directive('player-view', [function(){
 
   return {
     restrict: 'EA',
@@ -97,7 +97,7 @@ app.directive('playerView', [function(){
     scope: {
       ngModel: '='
     },
-    templateUrl: 'views/playerView.html',
+    templateUrl: 'player-view.html',
     link: function(scope, iElm, iAttrs, controller) {
       scope.$watch('ngModel.current', function(newVal) {
         if (newVal) {
